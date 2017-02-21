@@ -94,10 +94,10 @@ fi
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>7DEC15289610A33A0B4589F0</key>
+		<key>65444B5A3F8E7F53EA64ED90</key>
 		<dict>
 			<key>fileRef</key>
-			<string>ACAB5312E4973015A404C483</string>
+			<string>8FD7AE6811CA237D294BD8B2</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -105,7 +105,7 @@ fi
 		<dict>
 			<key>children</key>
 			<array>
-				<string>ACAB5312E4973015A404C483</string>
+				<string>8FD7AE6811CA237D294BD8B2</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -114,16 +114,16 @@ fi
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>ACAB5312E4973015A404C483</key>
+		<key>8FD7AE6811CA237D294BD8B2</key>
 		<dict>
 			<key>explicitFileType</key>
-			<string>archive.ar</string>
+			<string>wrapper.framework</string>
 			<key>includeInIndex</key>
 			<string>0</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>path</key>
-			<string>libPods-ReactiveCocoa.a</string>
+			<string>Pods_ReactiveCocoa.framework</string>
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
@@ -253,7 +253,7 @@ fi
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
-				<string>7DEC15289610A33A0B4589F0</string>
+				<string>65444B5A3F8E7F53EA64ED90</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
