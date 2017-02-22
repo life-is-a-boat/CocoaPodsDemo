@@ -19,7 +19,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self signal];
-
+    [self subject];
+    [self replaySubject];
 }
 
 -(void)signal {
@@ -42,6 +43,30 @@
     }];
 
     [disposable dispose];
+}
+
+//RACSubject:信号提供者，自己可以充当信号  又能发送信号
+-(void)subject {
+    //创建信号
+    RACSubject *subject = [RACSubject subject];
+
+    //订阅信号
+    [subject subscribeNext:^(id  _Nullable x) {
+        NSLog(@"订阅者---%@",x);
+    }];
+
+    //
+    [subject subscribeNext:^(id  _Nullable x) {
+        NSLog(@"订阅者二---%@",x);
+    }];
+
+    //发送信号
+    [subject sendNext:@"111"];
+}
+
+//
+-(void)replaySubject {
+    //
 }
 
 - (void)didReceiveMemoryWarning {
