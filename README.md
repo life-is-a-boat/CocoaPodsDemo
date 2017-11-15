@@ -33,5 +33,10 @@ Tip: CocoaPods provides a pod init command to create a Podfile with smart defaul
 $ pod install
 
 
+cocoapods 使用常见的问题
+1.安装第三方库在项目中导入的时候提示找不到文件
+这个一般情况下是在build settings -->search paths header search paths --> User Header Search Paths  添加 $(PODS_ROOT) 选择：recursive（会在相应的目录递归搜索文件）
+
+
 
   
