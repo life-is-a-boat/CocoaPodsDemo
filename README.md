@@ -1,7 +1,7 @@
 # CocoaPodsDemo
 
 CocoaPods 使用指南：
-
+1.安装指南
 安装方式异常简单 , Mac 下都自带 ruby，使用 ruby 的 gem 命令即可下载安装：
 $ sudo gem install cocoapods
 $ pod setup
@@ -32,6 +32,24 @@ Tip: CocoaPods provides a pod init command to create a Podfile with smart defaul
 执行下命令给项目安装cocoaPods
 $ pod install
 
+2.版本控制
+  pod 'AFNetworking', '~> 2.6'
+执行pod update 更新库 版本控制有一下几种方式：
+  1）引用第三方库的后边不添加  每次更新为最新的
+  2）添加 '2.6' 则是注明了第三方库的使用版本为固定的
+  3）使用'~> 2.6' 说明库的版本为2.6以上的版本  即最新版本
+  逻辑运算符
+  '> 0.1' Any version higher than 0.1
+  '>= 0.1' Version 0.1 and any higher version
+  '< 0.1' Any version lower than 0.1
+  '<= 0.1' Version 0.1 and any lower version
+  
+  乐观的运算符 an optimistic operator ~>:
+  '~> 0.1.2' Version 0.1.2 and the versions up to 0.2, not including 0.2 and higher //0.1.2至0.2
+  '~> 0.1' Version 0.1 and the versions up to 1.0, not including 1.0 and higher  //0.1至1.0
+  '~> 0' Version 0 and higher, this is basically the same as not having it.
+  
+3.
 
 cocoapods 使用常见的问题
 1.安装第三方库在项目中导入的时候提示找不到文件
