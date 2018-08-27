@@ -1,0 +1,5 @@
+platform :ios, "8.0" 
+target "CocoaPodsDemo" do
+pod 'AFNetworking', '~> 3.0'
+pod 'SDWebImage', '~> 3.7.6'
+end
