@@ -1,0 +1,15 @@
+/* 
+  ScanBarcode.strings
+  ScanBarcode
+
+  Created by tingting on 2018/9/26.
+  Copyright © 2018年 tingting. All rights reserved.
+*/
+
+OK = "OK";
+
+IsCameraAvilabel = "The device not support camera";
+
+CameraAvilableSetting = "Please allow access to your camera in the Settings - privacy - camera option";
+
+FlashNotAvailiable = "The device not support flash";

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScanBarcode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8EZ-pV-j1l">
+                                <rect key="frame" x="164.5" y="107" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="扫一扫"/>
+                                <connections>
+                                    <segue destination="qie-TB-uRU" kind="presentation" id="Mh2-J3-VTR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫描得到的数据" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3Y-vh-Z8J">
+                                <rect key="frame" x="134" y="324.5" width="107.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="J3Y-vh-Z8J" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="T3o-zU-y2P"/>
+                            <constraint firstItem="8EZ-pV-j1l" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="87" id="gdh-on-eAl"/>
+                            <constraint firstItem="8EZ-pV-j1l" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lcP-Z3-9lf"/>
+                            <constraint firstItem="J3Y-vh-Z8J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="m4t-Kq-qDy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="detail_label" destination="J3Y-vh-Z8J" id="dOr-iN-KAL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="793" y="-823"/>
+        </scene>
+        <!--Scan View Controller-->
+        <scene sceneID="j3p-un-k7T">
+            <objects>
+                <viewController storyboardIdentifier="ScanViewController" id="qie-TB-uRU" customClass="ScanViewController" customModule="ScanBarcode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U9n-h9-CRu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hna-oh-0td">
+                                <rect key="frame" x="15" y="35" width="61" height="34"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="dismiss"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="custom" customClass="DismissSegue" customModule="ScanBarcode" customModuleProvider="target" id="ctm-B9-hZT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TaX-fd-CGn">
+                                <rect key="frame" x="244" y="35" width="116" height="34"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="前/后置摄像头"/>
+                                <connections>
+                                    <action selector="switchDevicePosition:" destination="qie-TB-uRU" eventType="touchUpInside" id="5Vo-Fs-NI0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mG-RN-tg9">
+                                <rect key="frame" x="15" y="534" width="56" height="34"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="闪光灯"/>
+                                <connections>
+                                    <action selector="flashSwitch:" destination="qie-TB-uRU" eventType="touchUpInside" id="j6U-Qe-jkU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7k-sM-VIP">
+                                <rect key="frame" x="169" y="534" width="37" height="34"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="拍照"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="qie-TB-uRU" eventType="touchUpInside" id="QXP-zK-6qL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIj-4T-kPV">
+                                <rect key="frame" x="304" y="534" width="56" height="34"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="手电筒"/>
+                                <connections>
+                                    <action selector="lightClick:" destination="qie-TB-uRU" eventType="touchUpInside" id="ric-Pw-PEl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2mG-RN-tg9" firstAttribute="leading" secondItem="EKG-OU-mFc" secondAttribute="leading" constant="15" id="4V6-OD-BZ4"/>
+                            <constraint firstItem="lIj-4T-kPV" firstAttribute="centerY" secondItem="2mG-RN-tg9" secondAttribute="centerY" id="4j3-c6-LNX"/>
+                            <constraint firstItem="O7k-sM-VIP" firstAttribute="centerY" secondItem="2mG-RN-tg9" secondAttribute="centerY" id="9th-YZ-X9Y"/>
+                            <constraint firstItem="hna-oh-0td" firstAttribute="leading" secondItem="EKG-OU-mFc" secondAttribute="leading" constant="15" id="B0s-to-CvZ"/>
+                            <constraint firstItem="O7k-sM-VIP" firstAttribute="centerX" secondItem="U9n-h9-CRu" secondAttribute="centerX" id="EBZ-0u-MRb"/>
+                            <constraint firstItem="EKG-OU-mFc" firstAttribute="trailing" secondItem="lIj-4T-kPV" secondAttribute="trailing" constant="15" id="G0V-TY-Btl"/>
+                            <constraint firstItem="EKG-OU-mFc" firstAttribute="bottom" secondItem="O7k-sM-VIP" secondAttribute="bottom" constant="99" id="GCU-fe-1PZ"/>
+                            <constraint firstItem="TaX-fd-CGn" firstAttribute="top" secondItem="EKG-OU-mFc" secondAttribute="top" constant="15" id="TAz-gD-BB6"/>
+                            <constraint firstItem="EKG-OU-mFc" firstAttribute="trailing" secondItem="TaX-fd-CGn" secondAttribute="trailing" constant="15" id="nAC-FX-pZd"/>
+                            <constraint firstItem="hna-oh-0td" firstAttribute="top" secondItem="EKG-OU-mFc" secondAttribute="top" constant="15" id="o9v-r3-zuc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EKG-OU-mFc"/>
+                    </view>
+                    <connections>
+                        <outlet property="dismiss" destination="hna-oh-0td" id="vtK-ys-0bc"/>
+                        <outlet property="flashLight" destination="2mG-RN-tg9" id="KJ8-gJ-Obu"/>
+                        <outlet property="frontOrAfter" destination="TaX-fd-CGn" id="9sF-B4-yD4"/>
+                        <outlet property="light" destination="lIj-4T-kPV" id="IcU-io-xkB"/>
+                        <outlet property="takePhoto" destination="O7k-sM-VIP" id="JWn-w4-cdC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6gB-mG-LvJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="350" y="665"/>
+        </scene>
+    </scenes>
+</document>

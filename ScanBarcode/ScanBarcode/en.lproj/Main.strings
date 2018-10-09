@@ -1,0 +1,9 @@
+
+/* Class = "UIButton"; normalTitle = "扫一扫"; ObjectID = "8EZ-pV-j1l"; */
+"8EZ-pV-j1l.normalTitle" = "扫一扫";
+
+/* Class = "UILabel"; text = "扫描得到的数据"; ObjectID = "J3Y-vh-Z8J"; */
+"J3Y-vh-Z8J.text" = "扫描得到的数据";
+
+/* Class = "UIButton"; normalTitle = "dismiss"; ObjectID = "hna-oh-0td"; */
+"hna-oh-0td.normalTitle" = "dismiss";

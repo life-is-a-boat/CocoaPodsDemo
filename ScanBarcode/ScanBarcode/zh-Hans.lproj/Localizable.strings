@@ -1,0 +1,15 @@
+/* 
+  ScanBarcode.strings
+  ScanBarcode
+
+  Created by tingting on 2018/9/26.
+  Copyright © 2018年 tingting. All rights reserved.
+*/
+
+OK = "确定";
+
+IsCameraAvilabel = "设备不支持摄像";
+
+CameraAvilableSetting = "请在“设置-隐私-相机”选项中，允许访问你的相机";
+
+FlashNotAvailiable = "设备不支持闪光灯";
