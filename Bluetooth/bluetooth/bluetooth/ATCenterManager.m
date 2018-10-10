@@ -16,6 +16,7 @@
     CBCharacteristic    *_currentCharacteristic;
 }
 @property (nonatomic, strong) NSTimer   *timer; //定时器 保证与外设之间保持通信
+@property (nonatomic, assign)dispatch_queue_t   centralManagerQueue;
 
 @end
 @implementation ATCenterManager
@@ -31,7 +32,8 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        _manager = [[CBCentralManager alloc] initWithDelegate:self queue:dispatch_get_main_queue() options:@{CBCentralManagerOptionShowPowerAlertKey:@YES}];
+        _centralManagerQueue = dispatch_queue_create("centralManagerQueue", DISPATCH_QUEUE_SERIAL);
+        _manager = [[CBCentralManager alloc] initWithDelegate:self queue:_centralManagerQueue options:@{CBCentralManagerOptionShowPowerAlertKey:@YES}];
         _discoverPeripherals = [[NSMutableArray alloc] initWithCapacity:0];
     }
     return self;
