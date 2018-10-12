@@ -12,7 +12,8 @@ import AVFoundation
 struct ATQRCodeHelper {
     @discardableResult
     static func at_checkCameraEnable() -> Bool {
-        return (UIImagePickerController.isCameraDeviceAvailable(.rear) ||  UIImagePickerController.isCameraDeviceAvailable(.front))
+        return (UIImagePickerController.availableMediaTypes(for: .camera) != nil)
+//        return (UIImagePickerController.isCameraDeviceAvailable(.rear) ||  UIImagePickerController.isCameraDeviceAvailable(.front))
     }
     @discardableResult
     static func at_checkCamera() -> Bool {
