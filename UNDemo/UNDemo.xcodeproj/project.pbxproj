@@ -15,6 +15,7 @@
 		775B971D21F9998A00B95316 /* YZFimg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 775B971C21F9998A00B95316 /* YZFimg@2x.png */; };
 		776152E721F9C5B100DD597B /* UIApplication+NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776152E621F9C5B100DD597B /* UIApplication+NotificationHandler.swift */; };
 		776152E921F9C5FE00DD597B /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776152E821F9C5FE00DD597B /* NotificationHandler.swift */; };
+		776152EB21FAAC9100DD597B /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776152EA21FAAC9100DD597B /* UIAlertControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		776152E321F9B9B000DD597B /* UNDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UNDemo.entitlements; sourceTree = "<group>"; };
 		776152E621F9C5B100DD597B /* UIApplication+NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+NotificationHandler.swift"; sourceTree = "<group>"; };
 		776152E821F9C5FE00DD597B /* NotificationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
+		776152EA21FAAC9100DD597B /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,9 +66,10 @@
 				776152E321F9B9B000DD597B /* UNDemo.entitlements */,
 				775B971C21F9998A00B95316 /* YZFimg@2x.png */,
 				775B970821F8686200B95316 /* AppDelegate.swift */,
-				776152E621F9C5B100DD597B /* UIApplication+NotificationHandler.swift */,
 				775B970A21F8686200B95316 /* ViewController.swift */,
+				776152E621F9C5B100DD597B /* UIApplication+NotificationHandler.swift */,
 				776152E821F9C5FE00DD597B /* NotificationHandler.swift */,
+				776152EA21FAAC9100DD597B /* UIAlertControllerExtension.swift */,
 				775B970C21F8686200B95316 /* Main.storyboard */,
 				775B970F21F8686400B95316 /* Assets.xcassets */,
 				775B971121F8686400B95316 /* LaunchScreen.storyboard */,
@@ -108,6 +111,9 @@
 					775B970421F8686200B95316 = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -156,6 +162,7 @@
 				776152E921F9C5FE00DD597B /* NotificationHandler.swift in Sources */,
 				775B970B21F8686200B95316 /* ViewController.swift in Sources */,
 				775B970921F8686200B95316 /* AppDelegate.swift in Sources */,
+				776152EB21FAAC9100DD597B /* UIAlertControllerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +313,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UNDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -327,6 +335,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UNDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
