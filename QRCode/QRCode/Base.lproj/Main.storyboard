@@ -40,5 +40,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Scan View Controller-->
+        <scene sceneID="Z3g-L3-m2v">
+            <objects>
+                <viewController id="oR2-VS-kaa" customClass="ScanViewController" customModule="QRCode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l0Y-Zf-sD8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0mF-sF-pVP">
+                                <rect key="frame" x="30" y="176" width="315" height="315"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0mF-sF-pVP" secondAttribute="height" multiplier="1:1" id="ET0-Ox-f8A"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0mF-sF-pVP" firstAttribute="leading" secondItem="l0Y-Zf-sD8" secondAttribute="leading" constant="30" id="2ug-LX-5Vj"/>
+                            <constraint firstItem="0mF-sF-pVP" firstAttribute="centerX" secondItem="l0Y-Zf-sD8" secondAttribute="centerX" id="CJo-FX-Awm"/>
+                            <constraint firstItem="BKo-kn-Y4w" firstAttribute="trailing" secondItem="0mF-sF-pVP" secondAttribute="trailing" constant="30" id="H3Z-5d-8Hy"/>
+                            <constraint firstItem="0mF-sF-pVP" firstAttribute="centerY" secondItem="l0Y-Zf-sD8" secondAttribute="centerY" id="XMj-96-gc2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BKo-kn-Y4w"/>
+                    </view>
+                    <connections>
+                        <outlet property="cropView" destination="0mF-sF-pVP" id="Ntt-95-QXU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bfX-jx-d4N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="806" y="128"/>
+        </scene>
     </scenes>
 </document>

@@ -21,6 +21,7 @@
 		77F8CFDE2228CF9700E2AA89 /* mask.c in Sources */ = {isa = PBXBuildFile; fileRef = 77F8CFD32228CF9700E2AA89 /* mask.c */; };
 		77F8CFDF2228CF9700E2AA89 /* qrspec.c in Sources */ = {isa = PBXBuildFile; fileRef = 77F8CFD42228CF9700E2AA89 /* qrspec.c */; };
 		77F8CFE02228CF9700E2AA89 /* rscode.c in Sources */ = {isa = PBXBuildFile; fileRef = 77F8CFD82228CF9700E2AA89 /* rscode.c */; };
+		77F8CFE32228D1B200E2AA89 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F8CFE22228D1B200E2AA89 /* ScanViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,8 @@
 		77F8CFD62228CF9700E2AA89 /* QRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeGenerator.h; sourceTree = "<group>"; };
 		77F8CFD72228CF9700E2AA89 /* split.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = split.h; sourceTree = "<group>"; };
 		77F8CFD82228CF9700E2AA89 /* rscode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rscode.c; sourceTree = "<group>"; };
+		77F8CFE12228D1B200E2AA89 /* QRCode-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QRCode-Bridging-Header.h"; sourceTree = "<group>"; };
+		77F8CFE22228D1B200E2AA89 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,11 +90,13 @@
 				77F8CFB32228CF7A00E2AA89 /* AppDelegate.m */,
 				77F8CFB52228CF7A00E2AA89 /* ViewController.h */,
 				77F8CFB62228CF7A00E2AA89 /* ViewController.m */,
+				77F8CFE22228D1B200E2AA89 /* ScanViewController.swift */,
 				77F8CFB82228CF7A00E2AA89 /* Main.storyboard */,
 				77F8CFBB2228CF7D00E2AA89 /* Assets.xcassets */,
 				77F8CFBD2228CF7D00E2AA89 /* LaunchScreen.storyboard */,
 				77F8CFC02228CF7D00E2AA89 /* Info.plist */,
 				77F8CFC12228CF7D00E2AA89 /* main.m */,
+				77F8CFE12228D1B200E2AA89 /* QRCode-Bridging-Header.h */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 				TargetAttributes = {
 					77F8CFAE2228CF7A00E2AA89 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -200,6 +206,7 @@
 				77F8CFDE2228CF9700E2AA89 /* mask.c in Sources */,
 				77F8CFB42228CF7A00E2AA89 /* AppDelegate.m in Sources */,
 				77F8CFD92228CF9700E2AA89 /* bitstream.c in Sources */,
+				77F8CFE32228D1B200E2AA89 /* ScanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +348,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TBC76UMCJ9;
 				INFOPLIST_FILE = QRCode/Info.plist;
@@ -350,6 +358,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.lb369.com.QRCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "QRCode/QRCode-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -358,6 +369,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TBC76UMCJ9;
 				INFOPLIST_FILE = QRCode/Info.plist;
@@ -367,6 +379,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.lb369.com.QRCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "QRCode/QRCode-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
