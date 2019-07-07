@@ -12,9 +12,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (Swizzling)
 
+//交换
 + (void)methodSwizzlingWithOriginalSelector:(SEL)originSelector bySwizzlingSelector:(SEL)swizzlingSelector;
 
-+ (IMP)methodSwizzlingWithSelector:(SEL)selector withClass:(Class)objClass;
++ (IMP)impSwizzlingWithSelector:(SEL)selector withClass:(Class)objClass;
+
++ (IMP)impSwizzlingWithSelector:(SEL)selector;
+
+
++ (void)addMethodSwizzlingWithSelector:(SEL)selector withImplementationClass:(Class)implementClass;
+
 
 @end
 

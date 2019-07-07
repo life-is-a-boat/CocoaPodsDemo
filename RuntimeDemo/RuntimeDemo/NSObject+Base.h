@@ -11,6 +11,20 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (Base)
+//成员变量列表
+- (NSArray *)ivarsOfClass;
+
+//属性列表
+- (NSArray *)propertysOfClass;
+
+//实例方法
+- (NSArray *)instanceMethodList;
+
+//对象的size
+- (long)instance_size;
+
+//对象的name
+- (NSString *)instance_name;
 
 @end
 
