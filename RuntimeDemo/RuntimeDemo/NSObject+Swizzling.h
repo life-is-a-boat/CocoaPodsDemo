@@ -7,21 +7,27 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <objc/runtime.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (Swizzling)
 
+#pragma mark - swzilling
+//添加属性
+//- (void)addProperty:(NSString *)propertyName withValue:(id)value withType:(id)type withPolicy:(objc_AssociationPolicy)policy;
+
 //交换
 + (void)methodSwizzlingWithOriginalSelector:(SEL)originSelector bySwizzlingSelector:(SEL)swizzlingSelector;
 
+//动态添加方法
++ (void)addInstanceMethodSwizzlingWithSelector:(SEL)selector withImplementationClass:(Class)implementClass;
+
+
+#pragma mark - tool
 + (IMP)impSwizzlingWithSelector:(SEL)selector withClass:(Class)objClass;
 
 + (IMP)impSwizzlingWithSelector:(SEL)selector;
-
-
-+ (void)addMethodSwizzlingWithSelector:(SEL)selector withImplementationClass:(Class)implementClass;
-
 
 @end
 

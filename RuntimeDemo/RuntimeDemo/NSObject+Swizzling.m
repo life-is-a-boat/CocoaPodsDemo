@@ -10,7 +10,6 @@
 #import <objc/runtime.h>
 
 @implementation NSObject (Swizzling)
-
 //方法替代
 + (void)methodSwizzlingWithOriginalSelector:(SEL)originSelector bySwizzlingSelector:(SEL)swizzlingSelector {
     /**
@@ -69,15 +68,19 @@
     return temp_imp;
 }
 
-+ (void)addMethodSwizzlingWithSelector:(SEL)selector withImplementationClass:(Class)implementClass {
-    Method method = class_getInstanceMethod([self class], selector);
-    BOOL didAddMethod = class_addMethod([self class], selector, class_getMethodImplementation(implementClass, selector), method_getTypeEncoding([self methodSwizzlingWithSelector:selector withClass:implementClass]));
++ (void)addInstanceMethodSwizzlingWithSelector:(SEL)selector withImplementationClass:(Class)implementClass {
+    Class class = [self class];
+    Method method = class_getInstanceMethod(class, selector);
+    
+//    BOOL didAddMethod = class_addMethod(class, selector, class_getMethodImplementation(class, selector), method_getTypeEncoding([self methodSwizzlingWithSelector:selector withClass:class]));
     //如果已经存在 则替换
-    if (didAddMethod) {
-        method_setImplementation(method, method_getImplementation(method));
+    if (method) {
+        class_replaceMethod(class, selector, class_getMethodImplementation(implementClass, selector), method_getTypeEncoding(class_getInstanceMethod(implementClass, selector)));
+//        method_setImplementation(class_getClassMethod(implementClass, selector), class_getMethodImplementation(implementClass, selector));
+//        method_setImplementation(method, method_getImplementation(method));
     }
     else {
-        //
+        class_addMethod(class, selector, class_getMethodImplementation(implementClass, selector), method_getTypeEncoding(class_getInstanceMethod(implementClass, selector)));
     }
 }
 

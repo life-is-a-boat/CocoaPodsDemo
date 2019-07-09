@@ -8,6 +8,7 @@
 
 #import "NSObject+Base.h"
 #import <objc/runtime.h>
+#import <malloc/malloc.h>
 
 @implementation NSObject (Base)
 //对象的name
@@ -15,6 +16,8 @@
     return [NSString stringWithUTF8String:class_getName([self class])];
 }
 - (long)instance_size {
+//    NSLog(@"objc对象实际分配的内存大小: %zd", malloc_size((__bridge const void *)(objc)));
+//    malloc_size((__bridge const void *)self);
     return class_getInstanceSize([self class]);
 }
 

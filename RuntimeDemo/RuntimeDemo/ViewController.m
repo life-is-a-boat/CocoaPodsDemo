@@ -37,9 +37,12 @@
 //    NSLog(@"------:%@",[ViewController cla])
     Person *p = [[Person alloc] init];
     p.name = @"at";
-    class_addMethod([Person class], @selector(updatePerson:), class_getMethodImplementation([ViewController class], @selector(updatePerson:)), "v@:");
-    [p performSelector:@selector(updatePerson:)];
+    [Person addInstanceMethodSwizzlingWithSelector:@selector(updatePerson:) withImplementationClass:[ViewController class]];
+//    class_addMethod([Person class], @selector(updatePerson:), class_getMethodImplementation([ViewController class], @selector(updatePerson:)), "v@:");
+    [p performSelector:@selector(updatePerson:) withObject:nil];
     
+    [Person addInstanceMethodSwizzlingWithSelector:@selector(nihao) withImplementationClass:[ViewController class]];
+    [p performSelector:@selector(nihao)];
 }
 
 - (void) methodExchange {
@@ -71,5 +74,7 @@
     NSLog(@"000000000000000000000000000");
 }
 
-
+- (void)nihao {
+    NSLog(@"1111111111111");
+}
 @end

@@ -26,6 +26,7 @@
     _address = address;
     _passport = passport;
 }
+
 - (void)updatePerson:(NSString *)name {
     _name = name;
     NSLog(@"-----------------------:%@",name);

@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
                 passport:(NSString *)passport;
 
 - (void)updatePerson:(NSString *)name;
+
 @end
 
 NS_ASSUME_NONNULL_END
