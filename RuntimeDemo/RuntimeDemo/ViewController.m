@@ -10,6 +10,8 @@
 #import <objc/runtime.h>
 #import "NSObject+Base.h"
 #import "NSObject+Swizzling.h"
+#import "NSArray+Swizzling.h"
+
 #import "Person.h"
 
 @interface ViewController ()
@@ -43,6 +45,21 @@
     
     [Person addInstanceMethodSwizzlingWithSelector:@selector(nihao) withImplementationClass:[ViewController class]];
     [p performSelector:@selector(nihao)];
+    
+    
+    
+//    NSArray *array = [NSArray array];
+    /*
+     <__NSArrayI 0x60000092d9e0>(
+     NSString,
+     {(
+     )}
+     )
+     */
+//    2019-07-11 01:44:32.335961+0800 RuntimeDemo[29921:2203624] *** Terminating app due to uncaught exception 'NSRangeException', reason: '*** -[__NSArray0 objectAtIndex:]: index 4 beyond bounds for empty NSArray'
+    NSArray *array = [[NSArray alloc] init];
+//    NSArray *array = @[@0, @1];
+    NSLog(@"%@",[array objectAtIndex:4]);
 }
 
 - (void) methodExchange {
