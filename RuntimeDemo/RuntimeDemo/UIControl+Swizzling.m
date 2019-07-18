@@ -27,9 +27,11 @@
 
 - (void)swizzling_sendAction:(SEL)sel withTarget:(id)target withEvent:(UIEvent *)event {
     //先执行一部分自定义操作
+    self.userInteractionEnabled = false;
     if (self.delayTime > 0) {
         [NSThread sleepForTimeInterval:self.delayTime];
     }
+    self.userInteractionEnabled = true;
 //    sleep(<#unsigned int#>)
     //执行操作事件
     [self sendAction:sel to:target forEvent:event];

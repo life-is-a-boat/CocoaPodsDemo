@@ -19,15 +19,15 @@
 //    Method oldObjectAtIndex1 = class_getInstanceMethod(objc_getClass("__NSArrayI"),@selector(objectAtIndexedSubscript:));
 //    Method newObjectAtIndex1 = class_getInstanceMethod(objc_getClass("__NSArrayI"),@selector(safeobjectAtIndexedSubscript:));
 //    method_exchangeImplementations(oldObjectAtIndex1, newObjectAtIndex1);
-
 }
+
 //防止数组越界崩溃
 - (instancetype)safeobjectAtIndexedSubscript:(NSUInteger)index{
     if(index > (self.count-1)) {// 数组越界
         return nil;
-        }else{// 没有越界
-            return [self safeobjectAtIndexedSubscript:index];
-            }
+    }else{// 没有越界
+        return [self safeobjectAtIndexedSubscript:index];
+    }
 }
 
 - (id)swzilling_objectAtIndex:(NSUInteger)index {
