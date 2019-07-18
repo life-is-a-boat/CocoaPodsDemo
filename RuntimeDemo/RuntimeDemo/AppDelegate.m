@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "NSString+UTF.h"
+#import "NSData+UTF.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,34 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+   
+//    NSDictionary *dict =  [[NSDictionary alloc] initWithDictionary:@{
+//                                                                     @"companyName":@"天翼商务科技有限公司",
+//                                                                     @"creator":@"无名氏",
+//                                                                     @"WaybillTime":@"无名氏",
+//                                                                     @"userId":@"无名氏",
+//                                                                     @"number":@"无名氏",
+//                                                                     @"produceName":@"无名氏",
+//                                                                     @"sendAddr":@"无名氏",
+//                                                                     @"receiptAddr":@"无名氏",
+//                                                                     @"remark":@"无名氏"
+//                                                                     }];
+    
+//    NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingSortedKeys error:nil];
+//
+//    NSString *jsonStr = [data hexString];
+//
+//    NSString *utfStr = [jsonStr convertWithUTF8ToHexStr];
+
+//    NSError *error ;
+//    NSData *utfData = [utfStr dataUsingEncoding:NSUTF8StringEncoding];//[NSJSONSerialization dataWithJSONObject:utfStr options:NSJSONWritingPrettyPrinted error:&error];
+//    if (error) {
+//        printf("%@",error.localizedDescription);
+//    }
+//
+//    NSString *dataStr = [utfData convertDataToHexStr];
+    
+    
     return YES;
 }
 

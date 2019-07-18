@@ -1,8 +1,8 @@
 //
-//  NSArray+Swizzling.h
+//  NSData+UTF.h
 //  RuntimeDemo
 //
-//  Created by 刘兵 on 2019/7/10.
+//  Created by ting on 2019/7/18.
 //  Copyright © 2019 刘兵. All rights reserved.
 //
 
@@ -10,13 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSArray (Swizzling)
-
-@end
-
-
-@interface NSMutableArray (Swizzling)
-
+@interface NSData (UTF)
+- (NSString *)convertDataToHexStr;
+- (NSString *)hexString;
 @end
 
 NS_ASSUME_NONNULL_END
