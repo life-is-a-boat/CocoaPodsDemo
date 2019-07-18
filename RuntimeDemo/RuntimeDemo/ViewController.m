@@ -11,6 +11,7 @@
 #import "NSObject+Base.h"
 #import "NSObject+Swizzling.h"
 #import "NSArray+Swizzling.h"
+#import "UIControl+Swizzling.h"
 
 #import "Person.h"
 
@@ -36,34 +37,28 @@
     
     [self method1];
     
-//    NSLog(@"------:%@",[ViewController cla])
+//动态修改方法指向
     Person *p = [[Person alloc] init];
     for (NSString *value in [p propertysOfClass]) {
         NSLog(@"00000:%@",value);
     }
     p.name = @"at";
     [Person addInstanceMethodSwizzlingWithSelector:@selector(updatePerson:) withImplementationClass:[ViewController class]];
-//    class_addMethod([Person class], @selector(updatePerson:), class_getMethodImplementation([ViewController class], @selector(updatePerson:)), "v@:");
     [p performSelector:@selector(updatePerson:) withObject:nil];
     
     [Person addInstanceMethodSwizzlingWithSelector:@selector(nihao) withImplementationClass:[ViewController class]];
     [p performSelector:@selector(nihao)];
     
-    
-    
-//    NSArray *array = [NSArray array];
-    /*
-     <__NSArrayI 0x60000092d9e0>(
-     NSString,
-     {(
-     )}
-     )
-     */
-//    2019-07-11 01:44:32.335961+0800 RuntimeDemo[29921:2203624] *** Terminating app due to uncaught exception 'NSRangeException', reason: '*** -[__NSArray0 objectAtIndex:]: index 4 beyond bounds for empty NSArray'
+//防止数组崩溃
     NSArray *array = [[NSArray alloc] initWithObjects:@1, nil];
 //    NSArray *array = @[@0, @1];
     NSLog(@"%@",[array objectAtIndex:4]);
     NSLog(@"%@",array[2]);
+    
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.delayTime = 10;
+        
 }
 
 - (void) methodExchange {

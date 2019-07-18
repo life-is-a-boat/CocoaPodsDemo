@@ -8,9 +8,20 @@
 
 #import "NSObject+Base.h"
 #import <objc/runtime.h>
+#import <objc/message.h>
 #import <malloc/malloc.h>
 
 @implementation NSObject (Base)
+
+/*
+ id   typedef struct objc_object *id;
+
+ instancetype  具有对象类型检测功能
+ */
+//+ (instancetype)alloc
+//+ (instancetype)new
+//- (instancetype)init
+
 //对象的name
 - (NSString *)instance_name {
     return [NSString stringWithUTF8String:class_getName([self class])];

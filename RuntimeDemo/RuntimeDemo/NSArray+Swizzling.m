@@ -21,6 +21,8 @@
  
  重点：这里要千万注意，获取数组中的数据有两种方法，一种是[array objectAtIndex:1000]，另一种是arr[1000]，但是千万不要以为这两种方式调用的方法都是一样的（被坑过/(ㄒoㄒ)/~~），arr[1000]的调用方法是objectAtIndexedSubscript:，所以也要针对这个方法处理。
  
+ load和initialize方法内部使用了锁，因此它们是线程安全的。实现时要尽可能保持简单，避免阻塞线程，不要再使用锁。
+
  参考:http://www.manongjc.com/article/56380.html
  */
 // Swizzling核心代码
@@ -50,6 +52,8 @@
     Method single_subscript_method = class_getInstanceMethod(objc_getClass("__NSSingleObjectArrayI"), @selector(objectAtIndex:));
     Method single_subscript_swizzilling_method = class_getInstanceMethod(objc_getClass("__NSSingleObjectArrayI"), @selector(swizzilling_single_objectAtIndex:));
     method_exchangeImplementations(single_subscript_method, single_subscript_swizzilling_method);
+    
+    printf("----------%s----------",__func__);
 }
 
 //防止数组越界崩溃
