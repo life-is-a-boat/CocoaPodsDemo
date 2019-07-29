@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *address;
 @property (nonatomic, strong) NSString *passport;
 
-- (void)initPersonwithName:(NSString *)name
+- (void)initPersonwithName:(NSString *__nonnull)name
                        age:(NSInteger)age
                    address:(NSString *)address
                   passport:(NSString *)passport;
@@ -29,6 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)updatePerson:(NSString *)name;
 
+
++ (void)personTest;
 @end
 
 NS_ASSUME_NONNULL_END

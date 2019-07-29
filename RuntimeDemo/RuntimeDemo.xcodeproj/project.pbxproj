@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		770F4FD822E0385C00064C2E /* NSData+UTF.m in Sources */ = {isa = PBXBuildFile; fileRef = 770F4FD722E0385C00064C2E /* NSData+UTF.m */; };
 		770F4FDB22E0388B00064C2E /* NSString+UTF.m in Sources */ = {isa = PBXBuildFile; fileRef = 770F4FDA22E0388B00064C2E /* NSString+UTF.m */; };
+		77BD836622E70EA1004613FA /* ATAssert.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BD836522E70EA1004613FA /* ATAssert.m */; };
+		77BD836C22E7F119004613FA /* Boy.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BD836B22E7F119004613FA /* Boy.m */; };
+		77BD836E22E7F145004613FA /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 77BD836D22E7F145004613FA /* Person.m */; };
 		C117FB5C22A58852008DD8FA /* NSObject+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = C117FB5B22A58852008DD8FA /* NSObject+Swizzling.m */; };
 		C1643A6322AC1090000FC405 /* First.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1643A6122AC1090000FC405 /* First.cpp */; };
 		C1643A6622AC10A1000FC405 /* Second.c in Sources */ = {isa = PBXBuildFile; fileRef = C1643A6522AC10A1000FC405 /* Second.c */; };
 		C1643A6922B16098000FC405 /* NSObject+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = C1643A6822B16098000FC405 /* NSObject+Base.m */; };
-		C176A06E22D253E200B3451D /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = C176A06D22D253E200B3451D /* Person.m */; };
 		C176A07122D4E7F200B3451D /* UIControl+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = C176A07022D4E7F200B3451D /* UIControl+Swizzling.m */; };
 		C176A07422D4FC9F00B3451D /* NSArray+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = C176A07322D4FC9F00B3451D /* NSArray+Swizzling.m */; };
 		C1AD285B225CF03300EE19C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1AD285A225CF03300EE19C6 /* AppDelegate.m */; };
@@ -29,16 +31,21 @@
 		770F4FD722E0385C00064C2E /* NSData+UTF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+UTF.m"; sourceTree = "<group>"; };
 		770F4FD922E0388B00064C2E /* NSString+UTF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+UTF.h"; sourceTree = "<group>"; };
 		770F4FDA22E0388B00064C2E /* NSString+UTF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+UTF.m"; sourceTree = "<group>"; };
-		C117FB5A22A58852008DD8FA /* NSObject+Swizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Swizzling.h"; sourceTree = "<group>"; };
-		C117FB5B22A58852008DD8FA /* NSObject+Swizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Swizzling.m"; sourceTree = "<group>"; };
+		77BD836422E70EA1004613FA /* ATAssert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATAssert.h; sourceTree = "<group>"; };
+		77BD836522E70EA1004613FA /* ATAssert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATAssert.m; sourceTree = "<group>"; };
+		77BD836722E70EB9004613FA /* ATHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATHeader.h; sourceTree = "<group>"; };
+		77BD836A22E7F119004613FA /* Boy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Boy.h; sourceTree = "<group>"; };
+		77BD836B22E7F119004613FA /* Boy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Boy.m; sourceTree = "<group>"; };
+		77BD836D22E7F145004613FA /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		77BD836F22E7F16D004613FA /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		C117FB5A22A58852008DD8FA /* NSObject+Swizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSObject+Swizzling.h"; path = "../NSObject+Swizzling.h"; sourceTree = "<group>"; };
+		C117FB5B22A58852008DD8FA /* NSObject+Swizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Swizzling.m"; path = "../NSObject+Swizzling.m"; sourceTree = "<group>"; };
 		C1643A6122AC1090000FC405 /* First.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = First.cpp; sourceTree = "<group>"; };
 		C1643A6222AC1090000FC405 /* First.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = First.hpp; sourceTree = "<group>"; };
 		C1643A6422AC10A1000FC405 /* Second.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Second.h; sourceTree = "<group>"; };
 		C1643A6522AC10A1000FC405 /* Second.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Second.c; sourceTree = "<group>"; };
 		C1643A6722B16098000FC405 /* NSObject+Base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Base.h"; sourceTree = "<group>"; };
 		C1643A6822B16098000FC405 /* NSObject+Base.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Base.m"; sourceTree = "<group>"; };
-		C176A06C22D253E200B3451D /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		C176A06D22D253E200B3451D /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		C176A06F22D4E7F200B3451D /* UIControl+Swizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+Swizzling.h"; sourceTree = "<group>"; };
 		C176A07022D4E7F200B3451D /* UIControl+Swizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Swizzling.m"; sourceTree = "<group>"; };
 		C176A07222D4FC9F00B3451D /* NSArray+Swizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Swizzling.h"; sourceTree = "<group>"; };
@@ -67,6 +74,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77BD836222E70C8C004613FA /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				77BD836F22E7F16D004613FA /* Person.h */,
+				77BD836D22E7F145004613FA /* Person.m */,
+				77BD836A22E7F119004613FA /* Boy.h */,
+				77BD836B22E7F119004613FA /* Boy.m */,
+				770F4FD922E0388B00064C2E /* NSString+UTF.h */,
+				770F4FDA22E0388B00064C2E /* NSString+UTF.m */,
+				770F4FD622E0385C00064C2E /* NSData+UTF.h */,
+				770F4FD722E0385C00064C2E /* NSData+UTF.m */,
+				C1643A6722B16098000FC405 /* NSObject+Base.h */,
+				C1643A6822B16098000FC405 /* NSObject+Base.m */,
+				C117FB5A22A58852008DD8FA /* NSObject+Swizzling.h */,
+				C117FB5B22A58852008DD8FA /* NSObject+Swizzling.m */,
+				C176A06F22D4E7F200B3451D /* UIControl+Swizzling.h */,
+				C176A07022D4E7F200B3451D /* UIControl+Swizzling.m */,
+				C176A07222D4FC9F00B3451D /* NSArray+Swizzling.h */,
+				C176A07322D4FC9F00B3451D /* NSArray+Swizzling.m */,
+			);
+			path = Runtime;
+			sourceTree = "<group>";
+		};
+		77BD836322E70CA9004613FA /* Assert */ = {
+			isa = PBXGroup;
+			children = (
+				77BD836422E70EA1004613FA /* ATAssert.h */,
+				77BD836522E70EA1004613FA /* ATAssert.m */,
+				77BD836722E70EB9004613FA /* ATHeader.h */,
+			);
+			path = Assert;
+			sourceTree = "<group>";
+		};
 		C1AD284D225CF03300EE19C6 = {
 			isa = PBXGroup;
 			children = (
@@ -89,20 +129,8 @@
 				C1AD286F225CF0F100EE19C6 /* README.md */,
 				C1AD2859225CF03300EE19C6 /* AppDelegate.h */,
 				C1AD285A225CF03300EE19C6 /* AppDelegate.m */,
-				C176A06C22D253E200B3451D /* Person.h */,
-				C176A06D22D253E200B3451D /* Person.m */,
-				770F4FD922E0388B00064C2E /* NSString+UTF.h */,
-				770F4FDA22E0388B00064C2E /* NSString+UTF.m */,
-				770F4FD622E0385C00064C2E /* NSData+UTF.h */,
-				770F4FD722E0385C00064C2E /* NSData+UTF.m */,
-				C1643A6722B16098000FC405 /* NSObject+Base.h */,
-				C1643A6822B16098000FC405 /* NSObject+Base.m */,
-				C117FB5A22A58852008DD8FA /* NSObject+Swizzling.h */,
-				C117FB5B22A58852008DD8FA /* NSObject+Swizzling.m */,
-				C176A06F22D4E7F200B3451D /* UIControl+Swizzling.h */,
-				C176A07022D4E7F200B3451D /* UIControl+Swizzling.m */,
-				C176A07222D4FC9F00B3451D /* NSArray+Swizzling.h */,
-				C176A07322D4FC9F00B3451D /* NSArray+Swizzling.m */,
+				77BD836322E70CA9004613FA /* Assert */,
+				77BD836222E70C8C004613FA /* Runtime */,
 				C1643A6422AC10A1000FC405 /* Second.h */,
 				C1643A6522AC10A1000FC405 /* Second.c */,
 				C1643A6122AC1090000FC405 /* First.cpp */,
@@ -190,12 +218,14 @@
 			files = (
 				C176A07422D4FC9F00B3451D /* NSArray+Swizzling.m in Sources */,
 				C1643A6922B16098000FC405 /* NSObject+Base.m in Sources */,
+				77BD836E22E7F145004613FA /* Person.m in Sources */,
 				C1AD285E225CF03300EE19C6 /* ViewController.m in Sources */,
 				770F4FDB22E0388B00064C2E /* NSString+UTF.m in Sources */,
-				C176A06E22D253E200B3451D /* Person.m in Sources */,
 				C1643A6622AC10A1000FC405 /* Second.c in Sources */,
 				770F4FD822E0385C00064C2E /* NSData+UTF.m in Sources */,
 				C1AD2869225CF03600EE19C6 /* main.m in Sources */,
+				77BD836C22E7F119004613FA /* Boy.m in Sources */,
+				77BD836622E70EA1004613FA /* ATAssert.m in Sources */,
 				C1AD285B225CF03300EE19C6 /* AppDelegate.m in Sources */,
 				C117FB5C22A58852008DD8FA /* NSObject+Swizzling.m in Sources */,
 				C176A07122D4E7F200B3451D /* UIControl+Swizzling.m in Sources */,

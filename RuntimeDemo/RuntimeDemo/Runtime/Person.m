@@ -9,7 +9,9 @@
 #import "Person.h"
 
 @implementation Person
-
++ (void)personTest {
+    
+}
 - (NSString *)checkoutPerson {
     if (_name != nil) {
         return _name;
@@ -21,6 +23,7 @@
                        age:(NSInteger)age
                    address:(NSString *)address
                   passport:(NSString *)passport {
+//    NSAssert(name != nil, @"name 不能为空！！！");
     _name = name;
     _age = age;
     _address = address;

@@ -20,11 +20,16 @@ NS_ASSUME_NONNULL_BEGIN
 //实例方法
 - (NSArray *)instanceMethodList;
 
+//静态方法
++ (NSArray *)classMethodList;
+
 //对象的size
 - (long)instance_size;
 
 //对象的name
 - (NSString *)instance_name;
+
+- (Class)getMetaClass;
 
 @end
 

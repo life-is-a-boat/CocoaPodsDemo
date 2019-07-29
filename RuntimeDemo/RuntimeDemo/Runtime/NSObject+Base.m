@@ -45,7 +45,6 @@
         [list addObject:[[NSString alloc] initWithCString:name encoding:NSASCIIStringEncoding]];
     }
     free(ivars);
-    
     return list;
 }
 
@@ -98,7 +97,7 @@
             printf("%s 属性的名字是 %s 值是:%s",property_name,name,value);
         }
     }
-    
+    free(propertyList);
     return list;
 }
 
@@ -106,6 +105,20 @@
     NSMutableArray *list = [[NSMutableArray alloc] initWithCapacity:0];
     unsigned int methodCount = 0;
     Method *methodList = class_copyMethodList([self class], &methodCount);
+    for (unsigned int i = 0; i < methodCount; i ++) {
+        Method method = methodList[i];
+        SEL name = method_getName(method);
+        const char *type = method_getTypeEncoding(method);
+        NSLog(@"拥有的实例方法的类型为%@,名字为 %@",[[NSString alloc] initWithCString:type encoding:NSASCIIStringEncoding],NSStringFromSelector(name));
+        [list addObject:NSStringFromSelector(name)];
+    }
+    free(methodList);
+    return list;
+}
++ (NSArray *)classMethodList {
+    unsigned methodCount = 0;
+    Method *methodList = class_copyMethodList([[self class] class], &methodCount);
+    NSMutableArray *list = [[NSMutableArray alloc] initWithCapacity:0];
     for (unsigned int i = 0; i < methodCount; i ++) {
         Method method = methodList[i];
         SEL name = method_getName(method);
@@ -123,13 +136,14 @@
         Protocol *protocol = protoclList[i];
         [list addObject:NSStringFromProtocol(protocol)];
     }
+    free(protoclList);
     return list;
 }
 
-
-+ (NSArray *)classMethodList {
-    NSMutableArray *list = [[NSMutableArray alloc] initWithCapacity:0];
-    return list;
+- (Class)getMetaClass {
+    Class cls = object_getClass(self);
+    Class metaCls = object_getClass(cls);
+    return metaCls;
 }
 
 @end

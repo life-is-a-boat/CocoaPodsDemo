@@ -39,6 +39,12 @@
     
 //动态修改方法指向
     Person *p = [[Person alloc] init];
+    printf("%p",[Person classMethodList]);
+    [p initPersonwithName:nil age:0 address:@"000" passport:nil];
+    if ([p respondsToSelector:NSSelectorFromString(@"name")]) {
+        NSLog(@"0000___person has a name!!!");
+    }
+    
     for (NSString *value in [p propertysOfClass]) {
         NSLog(@"00000:%@",value);
     }
@@ -55,7 +61,9 @@
     NSLog(@"%@",[array objectAtIndex:4]);
     NSLog(@"%@",array[2]);
     
-    
+    NSArray *array1 = [NSArray array];
+    NSLog(@"%@",array1[2]);
+
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.delayTime = 10;
         

@@ -37,9 +37,14 @@
 +(Method)instanceMethodSwizzlingWithSelector:(SEL)selector withClass:(Class)objClass {
     return class_getInstanceMethod(objClass, selector);
 }
+
+static Method  _Nullable extracted(__unsafe_unretained Class objClass, SEL selector) {
+    return class_getClassMethod(objClass, selector);
+}
+
 //静态方法
 +(Method)classMethodSwizzlingWithSelector:(SEL)selector withClass:(Class)objClass {
-    return class_getClassMethod(objClass, selector);
+    return extracted(objClass, selector);
 }
 
 + (Method)methodSwizzlingWithSelector:(SEL)selector withClass:(Class)objClass
@@ -48,7 +53,8 @@
     if (method) {
         return method;
     }
-    return class_getClassMethod(objClass, selector);
+    Method  _Nullable extractedExpr = class_getClassMethod(objClass, selector);
+    return extractedExpr;
 }
 //method地址 IMP
 + (IMP)impSwizzlingWithSelector:(SEL)selector withClass:(Class)objClass {
